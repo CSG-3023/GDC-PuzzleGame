@@ -1,171 +1,107 @@
-# CSG Repository Template
+# Puzzle Game - GDC Assignment Sheet
 
-This repository serves as a **template** for game development projects.  
-It is intentionally **empty** and designed to help you practice setting up a clean, professional project structure using GitHub and Unity.
+###### 🎮 Game Design Challenge | ⚙️ Game Development | ⏱️  TIMELINE: 2 Weeks
 
-You are responsible for creating and configuring the Unity project **inside this repository** before beginning any assignment work.
+## 📖 Overview
 
----
+For this **Game Design Challenge**, you will design and develop a **Prototype (Rapid)** of a physics-based puzzle game that provides approximately **30 seconds of fun, playable puzzle gameplay** while meeting the design and technical requirements provided in the challenge documentation.
 
-## 📁 Repository Structure Overview
-
-The **root of this repository** is **not** the Unity project itself.
-
-Instead:
-
-- The **root folder** is for:
-  - Documentation
-  - Design notes
-  - References
-  - Planning files
-  - README and other supporting materials
-
-- The **Unity project** will live inside its own subfolder within this repo.
-
-> [!NOTE]  
-> This template is built using **Unity 6.3** and will serve as the base for all future Unity assignments in this course.
+> [!Important]
+> Review and follow the **[Game Design Challenge Guidelines](../index.md)** before beginning development.
 
 
 ---
 
-## 🛠️ Setup Instructions
+## 📝 Assignment Instructions
 
-Follow these steps **in order** before starting the assignment.
+### 1. Develop the Prototype (Rapid)
+1. Begin by reviewing the following challenge documentation:
+   * **[Concept Document](puzzle-concept.md)** — Provides the game's concept and overall vision.
+   * **[Player Persona](puzzle-persona.md)** — Defines the target player and their characteristics, motivations, and preferences.
+   * **[Game Brief](puzzle-brief.md)** — Defines the game's requirements, scope, and development direction.
 
----
+2. Develop a **Prototype (Rapid)** that adheres to the requirements and direction established in these documents.
 
-### 1. Create the Unity Project
-1. Open **Unity Hub**
-2. Click the **+ New Project** button
-3. Choose the **Core Universal 3D** template (_unless otherwise instructed_)
-4. Set the **location** to this repository’s root folder
-5. Name the Unity project folder: `ProjectName-Unity`
-
->[!NOTE]
-> **ProjectName** is the name of your project, typically the name of the repository.
->
+> [!Warning]
+>  **Failure to follow the requirements established in the above documents may result in a reduced grade**.
 
 ---
 
-### 2. Configure Ignore & Attribute Rules
-We use a layered configuration to manage files. You must manually "activate" these rules by renaming files.
+### 2. Build and Publish the Game
+1. Create and test a **WebGL build** of the completed Prototype (Rapid). Ensure the game loads, plays correctly, and provides the intended experience.
+2. Publish the WebGL build to **itch.io** so the game can be played directly in a web browser. 
+   - Follow the **[Upload to Itch.io Tutorial](../../tutorials/itch-io/TU-Itch-io-Submission.md)** for the required upload and configuration process.
+3. Submit your game to the **Playtest Game Jam** for peer evaluation. The link to the game jam will be provided in Harvey.
+   - Follow the **[Submitting to an Itch.io Game Jam Tutorial](../../tutorials/itch-io/TU-Itch-io-JamSubmission.md)** for the required upload and configuration process.
 
-#### A. Activate the Root Attributes (LFS & SmartMerge)
-The repository root contains a file named `Unity.gitattributes`. This contains the rules for Large File Storage (LFS) and the SmartMerge logic you just configured.
-1.  Locate `Unity.gitattributes` in the repository root.
-2.  RENAME it to `.gitattributes`.
-    
 > [!NOTE]
-> This file must stay in the root folder to work.
-> It is named `Unity.gitattributes` in the template because GitHub restricts active LFS triggers on template repositories; renaming it "activates" the tracking for your project.
-> 
+> If you do not already have an **itch.io account**, you will need to create one. The **[Create an Itch.io Account Tutorial](../../tutorials/itch-io/TU-Itch-io-Account.md)** can help guide you through the process.
 
-#### B. The Unity Project Ignore Rules
-1.  Locate the `Unity.gitignore` file (also in the root folder).
-2.  **MOVE** this file into your `ProjectName-Unity` folder.
-3.  **RENAME** it from `Unity.gitignore` to `.gitignore`.
-    
 > [!WARNING]
-> This file must live **inside the Unity project folder**, not the root.
-> It handles the engine-specific junk like the `Library/` folder, which can be several gigabytes of generated data.
+> All games must be submitted to the **Playtest Game Jam** for grading and peer evaluation. Games not submitted to the Playtest Game Jam by the deadline **WILL NOT BE GRADED**.
 
+
+---
+
+### 3. GitHub Wiki Documentation
+
+Maintain and update your **Project Wiki** throughout development to document the game's design and development.
+
+1. **Clone the Starter Project Wiki**
+   - Follow the instructions provided in Harvey to clone the starter Project Wiki.
+   - The starter Wiki includes the required project documentation pages and templates.
+2. **Define the Creative Direction**
+   - Complete the **Creative Direction** section of the Concept Document.
+   - Define:
+     - **Premise:** What is the game about? What is happening, and what is the player's purpose?
+     - **Setting / Theme:** Where does the game take place, and what central idea or theme shapes the experience?
+     - **Art Style:** What visual style will the game use? Consider how the visuals support the premise and theme while remaining optimized for WebGL performance.
+3. **Document the Puzzles**
+  - Create a **Puzzle Document** describing:
+    - Each puzzle or puzzle type
+    - How it is intended to be solved
+    - Where it is encountered in the game.
+3. **Maintain the Asset List**
+   - Complete the **Asset List** using the provided template.
+   - Document all assets used in the project, including their source and use.
+   - Update the Asset List as assets are added or changed during development.
+4. **Create and Add a Class Diagram**
+   - Follow the **[Class Diagram Tutorial](../../tutorials/UML-Diagram/TU-ClassDiagram-VS.md)** to create and export the class diagram.
+   - Add the exported class diagram to the appropriate page in the Project Wiki.
+  
 > [!NOTE]
-> Inside the root folder, there is another`.gitignore` file. **Leave this here.**
-> It ignores IDE-specific folders (VS Code/Visual Studio), system logs, and build outputs that happen outside of the Unity folder.
-> 
-
----
-### 3. Run the Automation Script
-This repository template includes a setup script designed to automate your environment. It handles three critical tasks:
--   Git Automation (Commit Rules): Installs a linter that ensures your commit messages follow the project's categorization (e.g., `feat:`, `fix:`, `refactor:`).
--   Branch Protection & Naming (Pre-Push): Installs a "gatekeeper" that prevents you from pushing to the wrong branch (`main`/`release`) and ensures your branch name follows the `type/description` format.
--   Unity YAML Merge: Configures Unity's "SmartMerge" tool on your machine to automatically resolve conflicts in Scenes and Prefabs.
-
-#    
-
-1. **Open** Git Bash
-2. Use the **`cd`** command to change to the repo directory 
-
-Example:
-```bash
-cd D/Students/YourName/CSG3023/26sp-csg3023-sandbox-YourGitHubUserName
-```
-> [!NOTE]
-> If you set up or cloned this repository using an **IDE** (Rider, VS Code, etc.),  
-> you do **not** need to open Git Bash separately.
-> You can instead:
-> 1. Open the **Terminal inside your IDE**
-> 2. Ensure the terminal shell is set to **Git Bash**
-> 3. The terminal will already be **pointing at your project directory**
-> 
-> In this case, you can skip the `cd` step and run the setup command directly.
-
-3. **Run** the setup script
-```bash
-./automation/setup-unity-repo.sh
-```
-4.  Follow the Prompts:
-    -   **Drive Letter:** Type the letter where Unity is installed (usually `C`) and hit Enter.
-    -   **Unity Version:** Type your exact Unity version (e.g., `6000.3.6f1`). You can find this in the Unity Hub under the "Installs" tab.
-
-#### What to look for:
--   The script will display `✅ SUCCESS` for both the **Git Automation** and **Unity YAML Merge** sections.
--   A final verification check will run at the end. If it says `VERIFIED`, your setup is complete.
-
-> [!IMPORTANT]
-> This setup is LOCAL to your computer. Git hooks and Unity SmartMerge settings are stored in the hidden `.git` folder, which is not synced to GitHub for security reasons.
-> 
-> You MUST run the automation script every time you:
-> -   Clone the project onto a new computer (e.g., switching from a lab PC to a laptop).
-> -   Re-clone the project after deleting your local folder.
-> -   Update Unity to a newer version (to ensure the SmartMerge path remains valid).
-> -   
-> If you don't run the script, your branch/commit rules won't work, and your Unity Scenes will likely break during merges!
+> **Creative Direction vs. Implementation**
 >
----
+> The Creative Direction establishes the game's intended experience and guides your design decisions. However, **the primary grading emphasis is on gameplay functionality and working mechanics, not visual polish or narrative depth**. Focus on creating a playable prototype that demonstrates your core gameplay loop and interactive systems. Visuals and theme should support the intended experience but do not need to be fully polished.
 
-### 4. Import Required Unity Package
-To keep our Unity hierarchy organized, we will be using the **Simple Unity Hierarchy Folder** package.
-This package helps maintain a clean and readable hierarchy in Unity. 
-Use the steps below to install the package: 
-
-#### Package Source
-🔗 https://github.com/ProfessorAkram/SimpleUnityHierarchyFolder
-
-#### How to Import
-1. Open your Unity project
-2. Open **Package Manager**
-3. Click **➕** → *Add package from Git URL*
-4. Paste the repository URL
-5. Import the package
-
-> [!IMPORTANT]
->  All projects in this course require that this package be implemented and that the scene hierarchies be organized with folders.
-> 
 
 ---
 
-### 5. Commit and Push Your Work
+### 4. Submit Your Project
 
-Before moving on:
+Submit the following URLs:
+* **itch.io:** URL to your playable game
+* **GitHub Repository:** URL to your project repository
+* **GitHub Wiki:** URL to your project wiki
 
-- Verify:
-  - Unity project opens correctly
-  - `.gitignore` and `.gitattributes` are present
-  - Required package is installed
-  - Git hooks are installed
- 
->[!IMPORTANT]
-> **All setup work must be committed and pushed before beginning the assignment.**
->
+Your GitHub Wiki must include:
+- Completed **Creative Direction** section of the Concept Document
+- 
+- Completed **Asset List**
+- **Class Diagram**
 
----
+> [!Warning]
+> **Your project cannot be graded if it is not accessible.** Your GitHub repository and Wiki must be in the **course organization**, and your itch.io game must be **publicly accessible and playable**.
 
-## ✅ Ready to Begin
+#### Final Check 📋
 
-Once everything above is complete and pushed to GitHub, your project repo and Unity project are ready.
+Before submitting, ask yourself:
 
-From this point forward:
-- Follow assignment instructions
-- Commit frequently
-- Keep your repository organized and professional
+* [ ] Does my game provide approximately **30 seconds of playable puzzle gameplay**?
+* [ ] Does my game follow the **Concept Document, Player Persona, and Game Brief**?
+* [ ] Have I created and tested a **WebGL build**?
+* [ ] Is my game **publicly playable on itch.io**?
+* [ ] Have I submitted my game to the **Playtesting Game Jam**?
+- [ ] Have I updated and maintained the my **GitHub Wiki** with the **required documentation** and format
+* [ ] Is my GitHub repository and Wiki in the **course organization**?
+* [ ] Do all submitted URLs work and provide the required access?
